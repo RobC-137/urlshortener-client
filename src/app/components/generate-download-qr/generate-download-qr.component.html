@@ -1,0 +1,12 @@
+<div>
+  <qrcode
+    [qrdata]="qrData"
+    [width]="256"
+    [errorCorrectionLevel]="'M'"
+    [margin]="2"
+    #cnv
+  ></qrcode>
+  <button type="button" mat-raised-button (click)="downloadQr()">
+    Download
+  </button>
+</div>

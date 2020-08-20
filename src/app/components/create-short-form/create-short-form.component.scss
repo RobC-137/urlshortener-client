@@ -1,0 +1,33 @@
+.url-input-form {
+  display: flex;
+  flex-direction: column;
+  // max-width: 400px;
+  justify-content: center;
+}
+
+a:link {
+  text-decoration: none;
+}
+
+.shorturl-response {
+  margin-top: 2rem;
+  // max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+mat-form-field {
+  margin-bottom: 1rem;
+}
+
+.error-message {
+  margin-top: 2rem;
+  align-self: center;
+}
+
+.main {
+  width: 50%;
+  margin: 0 auto;
+}

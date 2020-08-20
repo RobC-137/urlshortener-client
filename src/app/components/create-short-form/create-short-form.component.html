@@ -1,0 +1,73 @@
+<div class="main">
+  <form
+    [formGroup]="urlForm"
+    (ngSubmit)="onSubmit(urlForm)"
+    class="url-input-form"
+  >
+    <!-- <input formControlName="originalUrl" placeholder="https://www.google.com" /> -->
+
+    <mat-form-field appearance="outline">
+      <mat-label>Original URL</mat-label>
+      <input
+        matInput
+        formControlName="originalUrl"
+        placeholder="https://www.google.com"
+      />
+      <mat-hint>Don't forget http:// or https://</mat-hint>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Slug</mat-label>
+      <input matInput formControlName="slug" placeholder="lkufv" />
+      <mat-hint>Optional</mat-hint>
+    </mat-form-field>
+
+    <button type="submit" mat-raised-button>Shorten URL</button>
+  </form>
+
+  <div *ngIf="response && !err" class="shorturl-response">
+    <div class="short-url">
+      <a href="{{ response.shortenedUrl }}">
+        {{ shortenedUrl }}
+      </a>
+      <button
+        mat-icon-button
+        matTooltip="Copy Short URL"
+        color="primary"
+        class="copy"
+        [cdkCopyToClipboard]="response.shortenedUrl"
+      >
+        <mat-icon svgIcon="copy-content"></mat-icon>
+      </button>
+      <!-- <button
+        mat-button
+        color="primary"
+        class="copy"
+        [cdkCopyToClipboard]="response.shortenedUrl"
+      >
+        Copy
+      </button> -->
+    </div>
+    <!-- <qrcode
+      [qrdata]="response.shortenedUrl"
+      [width]="256"
+      [errorCorrectionLevel]="'M'"
+      [margin]="2"
+      #cnv
+    ></qrcode>
+    <button type="button" mat-raised-button (click)="downloadQr()">
+      Download
+    </button> -->
+
+    <app-generate-download-qr
+      [qrData]="response.shortenedUrl"
+    ></app-generate-download-qr>
+  </div>
+
+  <div *ngIf="invalidForm" class="error-message">
+    {{ showInvalidMessage }}
+  </div>
+  <div *ngIf="err" class="error-message">
+    {{ err }}
+  </div>
+</div>

@@ -1,0 +1,21 @@
+<mat-sidenav-container class="example-container">
+  <mat-sidenav mode="side" opened>
+    <div class="side">
+      <button
+        mat-button
+        [routerLink]="['']"
+        routerLinkActive="router-link-active"
+      >
+        Create Short Url
+      </button>
+      <button
+        mat-button
+        [routerLink]="['/statistics']"
+        routerLinkActive="router-link-active"
+      >
+        Statistics
+      </button>
+    </div>
+  </mat-sidenav>
+  <mat-sidenav-content><router-outlet></router-outlet></mat-sidenav-content>
+</mat-sidenav-container>

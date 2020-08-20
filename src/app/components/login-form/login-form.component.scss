@@ -1,0 +1,12 @@
+.login {
+  margin-top: 2em;
+}
+.login-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  button {
+    width: 50%;
+    margin: 0 auto;
+  }
+}

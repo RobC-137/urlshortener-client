@@ -1,0 +1,14 @@
+<div class="details-container">
+  <button
+    mat-stroked-button
+    color="primary"
+    (click)="backClicked()"
+    class="back-btn"
+  >
+    Back
+  </button>
+  <div class="row">
+    <app-chart [data]="data" class="chart"></app-chart>
+    <app-generate-download-qr [qrData]="shortUrl"></app-generate-download-qr>
+  </div>
+</div>

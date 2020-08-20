@@ -1,0 +1,43 @@
+table {
+  width: 100%;
+}
+
+a:link {
+  text-decoration: none;
+}
+
+.copy,
+.details,
+.delete {
+  visibility: hidden;
+}
+.mat-row:hover {
+  .copy,
+  .details,
+  .delete {
+    visibility: visible;
+  }
+}
+
+.link-cell {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.table-container {
+  width: 80%;
+  max-width: 80%;
+  margin: 0 auto;
+  height: 100vh;
+}
+
+.mat-header-cell {
+  flex-direction: column;
+  justify-content: center;
+}
+
+.mat-cell {
+  text-align: center;
+  justify-content: center;
+}

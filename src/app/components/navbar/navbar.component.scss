@@ -1,0 +1,27 @@
+// .navbar {
+//   display: flex;
+//   position: fixed;
+
+//   min-width: 100%;
+//   align-items: center;
+//   background-color: #1833ff;
+//   color: white;
+// }
+
+// .example-spacer {
+//   flex: 1 1 auto;
+// }
+
+.nav-bar {
+  display: flex;
+  justify-content: space-between;
+  .right-side {
+    display: flex;
+    justify-content: center;
+    margin-right: 3em;
+    .link {
+      width: auto;
+      margin-left: 1em;
+    }
+  }
+}

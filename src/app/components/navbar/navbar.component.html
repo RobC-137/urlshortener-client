@@ -1,0 +1,55 @@
+<mat-toolbar class="nav-bar" color="primary">
+  <span>Url Shortener App</span>
+  <div class="right-side">
+    <a
+      mat-icon-button
+      class="link"
+      matRipple
+      [disableRipple]="true"
+      [matRippleCentered]="true"
+      [matRippleRadius]="50"
+      [matRippleUnbounded]="false"
+      [routerLink]="['']"
+    >
+      <mat-icon>add_circle_outline</mat-icon>
+      <span>
+        Create Short Url
+      </span>
+    </a>
+
+    <a
+      *ngIf="loggedIn | async"
+      mat-icon-button
+      class="link"
+      matRipple
+      [disableRipple]="true"
+      [matRippleCentered]="true"
+      [matRippleRadius]="50"
+      [matRippleUnbounded]="false"
+      [routerLink]="['/statistics']"
+    >
+      <mat-icon>bar_chart</mat-icon>
+      <span>
+        Statistics
+      </span>
+    </a>
+    <a
+      mat-icon-button
+      mat-icon-button
+      class="link"
+      matRipple
+      [disableRipple]="true"
+      [matRippleCentered]="true"
+      [matRippleRadius]="35"
+      [matRippleUnbounded]="false"
+      (click)="route()"
+    >
+      <mat-icon>person</mat-icon>
+      <!-- <span>Log In</span> -->
+      <span *ngIf="loggedIn | async as user; else login">
+        Log Out
+      </span>
+      <ng-template #login>Log In</ng-template>
+    </a>
+  </div>
+</mat-toolbar>
